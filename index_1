@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CamHub | Private Access</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .glitch-header {
+            font-size: 2.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 2px 2px #f00, -2px -2px #0f0;
+            margin-bottom: 30px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .item-card {
+            border: 1px solid #0f0;
+            padding: 15px;
+            background: rgba(0, 255, 0, 0.05);
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .item-card:hover {
+            box-shadow: 0 0 15px #0f0;
+            background: rgba(0, 255, 0, 0.1);
+        }
+        .price-tag {
+            color: #ff0000;
+            font-size: 1.5em;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        button {
+            background-color: #0f0;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            width: 100%;
+            border-radius: 5px;
+        }
+        button:active {
+            transform: scale(0.95);
+            background-color: #fff;
+        }
+        .footer-note {
+            margin-top: 30px;
+            font-size: 0.8em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glitch-header">CamHub / Магазин</div>
+    
+    <div class="container">
+        <div class="item-card">
+            <h3>1 ОНЛАЙН-КАМЕРА 👁️</h3>
+            <p>Рандомная точка. Вечный доступ.</p>
+            <div class="price-tag">119 ₴</div>
+            <button onclick="Telegram.WebApp.sendData('buy_1')">КУПИТЬ ДОСТУП</button>
+        </div>
+
+        <div class="item-card" style="border-color: #ff0000;">
+            <h3>3 ОНЛАЙН-КАМЕРЫ 🔥</h3>
+            <p>Пакет "Наблюдатель".</p>
+            <div class="price-tag">299 ₴</div>
+            <button style="background-color: #ff0000; color: #fff;" onclick="Telegram.WebApp.sendData('buy_3')">ВЗЯТЬ ОПТОМ</button>
+        </div>
+    </div>
+
+    <div class="footer-note">SYSTEM I.S.-1 // SECURED ACCESS</div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        const webapp = window.Telegram.WebApp;
+        webapp.expand();
+    </script>
+</body>
+</html>
